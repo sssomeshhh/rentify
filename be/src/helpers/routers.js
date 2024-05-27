@@ -1,0 +1,25 @@
+import { exp } from "./imports.js";
+
+import { authUser } from "./middlewares.js";
+import { propertyAdd, propertyDelete, propertyDetail, propertyList, propertyUpdate, userLogin, userRegister } from "./controllers.js";
+
+const userRouter = exp.Router();
+
+userRouter.put('/register', userRegister);
+userRouter.post('/login', userLogin);
+
+const propertyRouter = exp.Router();
+
+propertyRouter.use('', authUser);
+
+propertyRouter.get('/', propertyList);
+propertyRouter.put('/', propertyAdd);
+
+propertyRouter.get('/detail/:id', propertyDetail);
+propertyRouter.post('/detail/:id', propertyUpdate);
+propertyRouter.delete('/detail/:id', propertyDelete);
+
+export {
+  userRouter,
+  propertyRouter
+};
