@@ -10,6 +10,9 @@ COPY . .
 FROM base as be
 # RUN yarn produce
 COPY --from=rentify:fe /root/fe/build /root/fe/build
+EXPOSE 8000
+EXPOSE 8080
+CMD yarn produce
 
 FROM base as fe
 RUN yarn produce
