@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import PageHeader from "./PageHeader";
+import Header from "./Header";
 
 import "../assets/style.css";
 import "./PropertyList.css";
@@ -45,7 +45,7 @@ const PropertyList = () => {
   }, []);
   return (
     <div>
-      <PageHeader/>
+      <Header/>
       <table className='table'>
         <tr>
           <th>Title</th>

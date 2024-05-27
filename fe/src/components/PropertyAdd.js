@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { apiRequest } from "../helpers/api";
 import { getAuthHeader } from "../helpers/auth";
-import PageHeader from "./PageHeader";
+import Header from "./Header";
 
 const PropertyAdd = () => {
   const [form, setForm] = useState({
@@ -34,7 +34,7 @@ const PropertyAdd = () => {
 
   return (
     <div>
-      <PageHeader />
+      <Header />
       <form onSubmit={handleSubmit}>
         <div>
           <label>Title:</label>

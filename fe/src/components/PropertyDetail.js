@@ -5,7 +5,7 @@ import "../assets/style.css";
 
 import { apiRequest } from "../helpers/api";
 import { getAuthHeader } from "../helpers/auth";
-import PageHeader from "./PageHeader";
+import Header from "./Header";
 
 const PropertyDetail = () => {
   const [detail, setDetail] = useState([]);
@@ -107,7 +107,7 @@ const PropertyDetail = () => {
 
   return (
     <div>
-      <PageHeader />
+      <Header />
       <p>Title: {detail.title}</p>
       <br />
       <p>Description: {detail.description}</p>

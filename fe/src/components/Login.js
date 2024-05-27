@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import "./Login.css";
 import { apiRequest } from "../helpers/api";
-import PageHeader from "./PageHeader";
+import Header from "./Header";
 import { Link } from "react-router-dom";
 
 const Login = ({ onClose }) => {
@@ -29,7 +29,7 @@ const Login = ({ onClose }) => {
   }
   return (
     <div>
-      <PageHeader/>
+      <Header/>
       <div onClick={onClose}>
         <div onClick={(e) => {e.stopPropagation();}} className='modalContainer'>
           <form className="login_panel" style={{}} onSubmit={handleLogin}>

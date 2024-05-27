@@ -4,7 +4,7 @@ import "../assets/style.css";
 import "../assets/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
-const PageHeader = () => {
+const Header = () => {
   const handleLogout = async (e) => {
     e.preventDefault();
     let email = sessionStorage.getItem('email');
@@ -38,7 +38,7 @@ const PageHeader = () => {
           <h1 style={{paddingRight: "5%"}}>Rentify</h1>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                   aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon">Toggle</span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -64,4 +64,4 @@ const PageHeader = () => {
   )
 }
 
-export default PageHeader;
+export default Header;
