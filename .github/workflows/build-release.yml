@@ -67,7 +67,7 @@ jobs:
             sssomeshhh/rentify:be
             sssomeshhh/rentify:be-${{ github.sha }}
           build-args:
-            XE=fe
+            XE=be
 
   fs:
     runs-on: ubuntu-22.04
