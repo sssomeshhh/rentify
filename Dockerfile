@@ -9,6 +9,7 @@ COPY . .
 
 FROM base as be
 # RUN yarn produce
+COPY --from=rentify:fe /root/fe/build /root/fe/build
 
 FROM base as fe
 RUN yarn produce
