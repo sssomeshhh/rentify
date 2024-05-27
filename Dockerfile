@@ -15,10 +15,10 @@ RUN yarn produce
 
 FROM mongo:latest as fs
 RUN apt update && \
-    apt install curl && \
+    apt install -y curl && \
     curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && \
     bash nodesource_setup.sh && \
-    apt install nodejs && \
+    apt install -y nodejs && \
     corepack enable
 COPY --from=sssomeshhh/rentify:fe /root/fe/build /root/fe/build
 COPY --from=sssomeshhh/rentify:be /root/be /root/be
