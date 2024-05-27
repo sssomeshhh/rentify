@@ -2,6 +2,9 @@
 **/.git
 **/.gitignore
 
+# idea files
+**/.idea
+
 # yarn files
 **/.yarn
 **/.pnp.*
