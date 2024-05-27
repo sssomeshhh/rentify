@@ -10,12 +10,14 @@ userRouter.post('/login', userLogin);
 
 const propertyRouter = exp.Router();
 
-propertyRouter.use('', authUser);
-
 propertyRouter.get('/', propertyList);
-propertyRouter.put('/', propertyAdd);
 
 propertyRouter.get('/detail/:id', propertyDetail);
+
+propertyRouter.use('', authUser);
+
+propertyRouter.put('/', propertyAdd);
+
 propertyRouter.post('/detail/:id', propertyUpdate);
 propertyRouter.delete('/detail/:id', propertyDelete);
 
