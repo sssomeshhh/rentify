@@ -1,6 +1,6 @@
 import { crs, exp, pth, url } from "./imports.js";
 
-import { connect as connectDB } from "./database.js";
+import { connectDatabase } from "./database.js";
 import { apiRouter } from "./routers.js";
 
 const startServer = () => {
@@ -32,7 +32,7 @@ const startServer = () => {
     res.sendFile(`${staticDir}/index.html`)
   });
 
-  connectDB().then(() => {});
+  connectDatabase().then(() => {});
 
   app.listen(serverPort, () => {
     console.log(`[server] Listening on port ${serverPort}`);
