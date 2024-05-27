@@ -14,11 +14,11 @@ FROM base as fe
 RUN yarn produce
 
 FROM mongo:latest as fs
-RUN apt update && \
-    apt install -y curl && \
+RUN apt-get update && \
+    apt-get install --yes curl && \
     curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh && \
     bash nodesource_setup.sh && \
-    apt install -y nodejs && \
+    apt-get install --yes nodejs && \
     corepack enable
 COPY --from=sssomeshhh/rentify:fe /root/fe/build /root/fe/build
 COPY --from=sssomeshhh/rentify:be /root/be /root/be
