@@ -45,7 +45,7 @@ const PropertyDetail = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    apiRequest('POST', location, { data: detail, headers: { ...getAuthHeader() } })
+    apiRequest('POST', location.pathname, { data: detail, headers: { ...getAuthHeader() } })
       .then((res) => {
         console.log('Property updated!', res.data);
       })
