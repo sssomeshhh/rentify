@@ -4,3 +4,6 @@
 
 # npm files
 **/node_modules
+
+# build files
+**/build
