@@ -1,0 +1,10 @@
+version: "1"
+
+services:
+  - type: web
+    name: rentify
+    runtime: image
+    image:
+      url: docker.io/sssomeshhh/rentify:fs
+    plan: free
+    region: oregon
