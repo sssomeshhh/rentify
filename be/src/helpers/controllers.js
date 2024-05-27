@@ -55,7 +55,7 @@ const propertyAdd = async (req, res) => {
 
 const propertyDetail = async (req, res) => {
   try {
-    const dbq = await Property.findOne({ _id: req.params.id });
+    const dbq = await Property.findOne({ _id: req.params.id }).populate('seller');
     res.status(201).json(dbq);
   } catch (error) {
     res.status(400).json({ error: error.message });
