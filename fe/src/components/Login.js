@@ -22,6 +22,8 @@ const Login = ({ onClose }) => {
       })
       .catch((err) => {
         console.error('There was an error logging in!', err);
+        alert('There was an error logging in!');
+        setOpen(false);
       });
   };
   if (!open) {
