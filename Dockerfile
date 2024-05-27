@@ -20,8 +20,8 @@ RUN apt update && \
     bash nodesource_setup.sh && \
     apt install nodejs && \
     corepack enable
-COPY --from=rentify:fe /root/fe/build /root/fe/build
-COPY --from=rentify:be /root/be /root/be
+COPY --from=sssomeshhh/rentify:fe /root/fe/build /root/fe/build
+COPY --from=sssomeshhh/rentify:be /root/be /root/be
 WORKDIR /root/be
 RUN yarn install
 EXPOSE 8000
