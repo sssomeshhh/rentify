@@ -3,7 +3,7 @@
     <package-json value="$PROJECT_DIR$/fe/package.json" />
     <command value="run" />
     <scripts>
-      <script value="build" />
+      <script value="produce" />
     </scripts>
     <node-interpreter value="project" />
     <envs />
