@@ -1,7 +1,7 @@
 FROM node:current-bullseye-slim as fe
 RUN corepack enable
-COPY ./fe /root
 WORKDIR /root/fe
+COPY ./fe .
 RUN yarn install
 RUN yarn produce
 
@@ -13,8 +13,8 @@ RUN apt-get update && \
     apt-get install --yes nodejs && \
     corepack enable
 COPY --from=sssomeshhh/rentify:fe /root/fe/build /root/fe/build
-COPY ./be /root
 WORKDIR /root/be
+COPY ./be .
 RUN yarn install
 ENV SERVER_PORT=80
 EXPOSE 80
