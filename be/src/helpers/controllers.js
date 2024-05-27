@@ -55,9 +55,6 @@ const propertyAdd = async (req, res) => {
 
 const propertyDetail = async (req, res) => {
   try {
-    if (req.user.role !== "seller") {
-      return res.status(403).json({ error: "Access Denied!" });
-    }
     const dbq = await Property.findOne({ _id: req.params.id });
     res.status(201).json(dbq);
   } catch (error) {
