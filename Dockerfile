@@ -24,6 +24,7 @@ COPY --from=sssomeshhh/rentify:fe /root/fe/build /root/fe/build
 COPY --from=sssomeshhh/rentify:be /root/be /root/be
 WORKDIR /root/be
 RUN yarn install
-EXPOSE 8000
+ENV SERVER_PORT=80
+EXPOSE 80
 RUN echo "mongod > /dev/null 2>&1 & disown ; yarn produce ;" > startApp
 CMD bash ./startApp
