@@ -8,7 +8,7 @@ RUN yarn install
 COPY . .
 
 FROM base as be
-RUN yarn produce
+# RUN yarn produce
 
 FROM base as fe
 RUN yarn produce
