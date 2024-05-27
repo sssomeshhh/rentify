@@ -19,12 +19,12 @@ const Register = () => {
       .then((res) => {
         console.log('Registered successfully!', res.data);
         alert('Registered Successfully! Please Login!');
-        location.href = location.origin;
+        location.href = location.origin + '/login';
       })
       .catch((err) => {
         console.error('There was an error registering!', err);
         alert('Cannot Register! Please Try Again!');
-        location.href = location.origin;
+        location.href = location.origin + '/register';
       });
   };
 
