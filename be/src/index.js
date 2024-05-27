@@ -1,5 +1,3 @@
-import { startServerApi } from "./helpers/serverapi.js";
-import { startServerWeb } from "./helpers/serverweb.js";
+import { startServer } from "./helpers/server.js";
 
-startServerApi();
-startServerWeb();
+startServer();

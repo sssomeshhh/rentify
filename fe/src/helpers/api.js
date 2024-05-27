@@ -1,6 +1,6 @@
 import aio from "axios";
 
-const apiUrl = "http://localhost:8080";
+const apiUrl = location.origin + '/api';
 
 const apiRequest = async (method, path, options) => {
   let url = apiUrl + path;
