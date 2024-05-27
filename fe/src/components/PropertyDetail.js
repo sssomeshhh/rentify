@@ -45,7 +45,7 @@ const PropertyDetail = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    apiRequest('POST', window.location, { data: detail, headers: { ...getAuthHeader() } })
+    apiRequest('POST', location, { data: detail, headers: { ...getAuthHeader() } })
       .then((res) => {
         console.log('Property updated!', res.data);
       })
@@ -96,12 +96,12 @@ const PropertyDetail = () => {
       .then((res) => {
         console.log("Property deleted!", res.data);
         alert("Property deleted!");
-        window.location.href = window.location.origin + '/property/list';
+        location.href = location.origin + '/property/list';
       })
       .catch((err) => {
         console.error("There was an error deleting the property!", err);
         alert("There was an error deleting the property!");
-        window.location.href = window.location.origin + '/property/list';
+        location.href = location.origin + '/property/list';
       });
   };
 

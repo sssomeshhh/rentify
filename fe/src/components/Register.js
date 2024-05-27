@@ -19,12 +19,12 @@ const Register = () => {
       .then((res) => {
         console.log('Registered successfully!', res.data);
         alert('Registered Successfully! Please Login!');
-        window.location.href = window.location.origin;
+        location.href = location.origin;
       })
       .catch((err) => {
         console.error('There was an error registering!', err);
         alert('Cannot Register! Please Try Again!');
-        window.location.href = window.location.origin;
+        location.href = location.origin;
       });
   };
 
@@ -34,7 +34,7 @@ const Register = () => {
         <span className="text" style={{flexGrow: "1"}}>SignUp</span>
         <div style={{display: "flex", flexDirection: "row", justifySelf: "end", alignSelf: "start"}}>
           <a href="/" onClick={() => {
-            window.location.href = window.location.origin;
+            location.href = location.origin;
           }} style={{justifyContent: "space-between", alignItems: "flex-end"}}>
             <img style={{width: "1cm"}} src={closeIcon} alt="X"/>
           </a>

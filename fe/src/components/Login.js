@@ -25,7 +25,7 @@ const Login = ({ onClose }) => {
       });
   };
   if (!open) {
-    window.location.href = "/";
+    location.href = "/";
   }
   return (
     <div>
