@@ -1,16 +1,8 @@
-FROM node:current-bullseye-slim as base
+FROM node:current-bullseye-slim as fe
 RUN corepack enable
-ARG XE
-WORKDIR /root/$XE
-COPY package.json .
-COPY yarn.lock .
+COPY ./fe /root
+WORKDIR /root/fe
 RUN yarn install
-COPY . .
-
-FROM base as be
-# RUN yarn produce
-
-FROM base as fe
 RUN yarn produce
 
 FROM mongo:latest as fs
@@ -21,7 +13,7 @@ RUN apt-get update && \
     apt-get install --yes nodejs && \
     corepack enable
 COPY --from=sssomeshhh/rentify:fe /root/fe/build /root/fe/build
-COPY --from=sssomeshhh/rentify:be /root/be /root/be
+COPY ./be /root
 WORKDIR /root/be
 RUN yarn install
 ENV SERVER_PORT=80
