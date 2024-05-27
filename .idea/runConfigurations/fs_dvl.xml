@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="phca.dvl" type="CompoundRunConfigurationType">
+    <toRun name="be.dvl" type="js.build_tools.npm" />
+    <toRun name="fe.dvl" type="js.build_tools.npm" />
+    <method v="2" />
+  </configuration>
+</component>
