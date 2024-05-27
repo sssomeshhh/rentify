@@ -2,7 +2,7 @@
   <configuration default="false" name="fe" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="imageTag" value="rentify:fe" />
+        <option name="imageTag" value="sssomeshhh/rentify:fe" />
         <option name="buildArgs">
           <list>
             <DockerEnvVarImpl>
