@@ -1,4 +1,4 @@
-FROM node:current-bullseye-slim as base
+FROM node:current-bullseye-slim as xe
 RUN corepack enable
 ARG XE
 WORKDIR /root/$XE
@@ -7,8 +7,8 @@ COPY yarn.lock .
 RUN yarn install
 COPY . .
 
-FROM base as be
+FROM xe as be
 RUN yarn produce
 
-FROM base as fe
+FROM xe as fe
 RUN yarn produce
