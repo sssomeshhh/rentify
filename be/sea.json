@@ -1,4 +1,4 @@
 {
-  "main": "main.cjs",
+  "main": "fs.cjs",
   "output": "sea.blob"
 }
