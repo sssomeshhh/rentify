@@ -11,7 +11,7 @@
             </DockerEnvVarImpl>
           </list>
         </option>
-        <option name="buildCliOptions" value="--target be --progress plain" />
+        <option name="buildCliOptions" value="--target be" />
         <option name="buildOnly" value="true" />
         <option name="contextFolderPath" value="./be" />
         <option name="sourceFilePath" value="Dockerfile" />

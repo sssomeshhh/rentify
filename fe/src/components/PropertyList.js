@@ -72,7 +72,6 @@ const PropertyList = () => {
           </tr>
         ))}
       </table>
-      ;
     </div>
   );
 };

@@ -26,9 +26,13 @@ const PropertyAdd = () => {
     apiRequest('PUT', '/property', { data: form, headers: { ...getAuthHeader() } })
       .then((res) => {
         console.log('Property added!', res.data);
+        alert('Property added!');
+        location.href = location.origin + '/property/list';
       })
       .catch((err) => {
         console.error('There was an error adding the property!', err);
+        alert('There was an error adding the property!');
+        location.href = location.origin + '/property/list';
       });
   };
 

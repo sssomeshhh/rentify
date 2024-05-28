@@ -11,8 +11,8 @@ const Header = () => {
     sessionStorage.removeItem('email');
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('role');
-    window.location.href = window.location.origin;
-    window.location.reload();
+    location.href = location.origin;
+    location.reload();
     alert("Logging out " + email + "...")
   };
 

@@ -1,0 +1,4 @@
+{
+  "main": "fs.cjs",
+  "output": "fs.blob"
+}
