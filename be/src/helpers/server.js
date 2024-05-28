@@ -1,10 +1,13 @@
 import { crs, exp, pth, url } from "./imports.js";
 
 import { connectDatabase } from "./database.js";
+import { evalPopulate } from "./populate.js";
 import { apiRouter } from "./routers.js";
 
 const startServer = () => {
   const app = exp();
+
+  const isEval = process.env.IS_EVAL;
 
   const serverPort = process.env.SERVER_PORT;
 
@@ -32,7 +35,13 @@ const startServer = () => {
     res.sendFile(`${staticDir}/index.html`)
   });
 
-  connectDatabase().then(() => {});
+  connectDatabase().then(() => {
+    if (isEval === 'true') {
+      evalPopulate().then(() => {
+        console.log('[server] Populated database with sample data for evaluation');
+      });
+    }
+  });
 
   app.listen(serverPort, () => {
     console.log(`[server] Listening on port ${serverPort}`);
