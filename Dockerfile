@@ -19,13 +19,13 @@ RUN mv dist/fs.cjs ./ && \
 FROM ubuntu:noble as fs
 WORKDIR /root/fs
 COPY --from=sssomeshhh/rentify:be /root/be/fs .
-COPY --from=sssomeshhh/rentify:fe /root/fe/build ./fe
-ENV NODE_NO_WARNINGS=1 IS_EVAL=true SERVER_PORT=80
+COPY --from=sssomeshhh/rentify:fe /root/fe/build ./static
+ENV NODE_NO_WARNINGS=1 IS_EVAL=true SERVER_PORT=80 STATIC_DIR=/root/fs/static
 CMD ./fs
 
 FROM mongo:latest as rn
 WORKDIR /root/rn
 COPY --from=sssomeshhh/rentify:fs /root/fs .
-ENV NODE_NO_WARNINGS=1 IS_EVAL=true SERVER_PORT=80
+ENV NODE_NO_WARNINGS=1 IS_EVAL=true SERVER_PORT=80 STATIC_DIR=/root/rn/static
 RUN echo "mongod > /dev/null 2>&1 & disown ; ./fs ;" > stRn
 CMD bash ./stRn
