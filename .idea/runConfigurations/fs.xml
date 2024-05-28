@@ -3,7 +3,7 @@
     <deployment type="dockerfile">
       <settings>
         <option name="imageTag" value="sssomeshhh/rentify:fs" />
-        <option name="buildCliOptions" value="--target fs --progress plain" />
+        <option name="buildCliOptions" value="--target fs" />
         <option name="containerName" value="fs" />
         <option name="portBindings">
           <list>
