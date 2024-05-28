@@ -14,5 +14,5 @@ FROM xe as fe
 
 FROM ubuntu:noble as fs
 WORKDIR /root/fs
-COPY --from=be /root/be/ .
-COPY --from=fe /root/fe/ .
+COPY --from=sssomeshhh/rentify:be /root/be/ .
+COPY --from=sssomeshhh/rentify:fe /root/fe/ .
