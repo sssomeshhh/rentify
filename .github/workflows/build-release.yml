@@ -21,7 +21,7 @@ jobs:
         uses: docker/build-push-action@v5.3.0
         with:
           builder: ${{ steps.setup_buildx.name }}
-          context: .
+          context: ./fe
           file: Dockerfile
           target: fe
           cache-from: |
@@ -33,10 +33,46 @@ jobs:
           tags: |
             sssomeshhh/rentify:fe
             sssomeshhh/rentify:fe-${{ github.sha }}
+          build-args:
+            XE=fe
+
+  be:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3.1.0
+        with:
+          registry: docker.io
+          username: sssomeshhh
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+      - name: Setup Docker Buildx
+        id: setup_buildx
+        uses: docker/setup-buildx-action@v3.3.0
+      - name: Build Target
+        uses: docker/build-push-action@v5.3.0
+        with:
+          builder: ${{ steps.setup_buildx.name }}
+          context: ./be
+          file: Dockerfile
+          target: be
+          cache-from: |
+            type=registry,ref=sssomeshhh/cache:rentify-be
+          cache-to: |
+            type=registry,ref=sssomeshhh/cache:rentify-be
+          load: false
+          push: true
+          tags: |
+            sssomeshhh/rentify:be
+            sssomeshhh/rentify:be-${{ github.sha }}
+          build-args:
+            XE=be
 
   fs:
     runs-on: ubuntu-22.04
     needs:
+      - be
       - fe
     steps:
       - name: Checkout
