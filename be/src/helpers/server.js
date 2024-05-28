@@ -1,4 +1,4 @@
-import { crs, exp, pth, url } from "./imports.js";
+import { crs, exp } from "./imports.js";
 
 import { connectDatabase } from "./database.js";
 import { evalPopulate } from "./populate.js";
@@ -11,7 +11,7 @@ const startServer = () => {
 
   const serverPort = process.env.SERVER_PORT;
 
-  const staticDir = pth.join(pth.dirname(url.fileURLToPath(import.meta.url)), "../../../fe/build");
+  const staticDir = process.env.STATIC_DIR;
 
   app.use(crs());
   app.use(exp.json());
