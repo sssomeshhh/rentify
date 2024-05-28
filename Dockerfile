@@ -6,12 +6,11 @@ COPY package.json .
 COPY yarn.lock .
 RUN yarn install
 COPY . .
+RUN yarn produce
 
 FROM xe as be
-RUN yarn produce
 
 FROM xe as fe
-RUN yarn produce
 
 FROM ubuntu:noble as fs
 WORKDIR /root/fs
