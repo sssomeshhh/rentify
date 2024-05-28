@@ -19,7 +19,7 @@
   "main": "index.js",
   "scripts": {
     "develop": "nodemon src/index.js",
-    "produce": "node src/index.js"
+    "produce": "yarn webpack"
   },
   "packageManager": "yarn@4.2.2"
 }
